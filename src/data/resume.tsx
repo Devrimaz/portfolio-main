@@ -74,7 +74,7 @@ export const DATA = {
       title: "Settlement Officer",
       logoUrl: "/Port-City-BPO-logo.webp",
       start: "May 2025",
-      end: "",
+      end: "Present",
       description:
         "Responsible for handling financial settlements, verifying transactions, and ensuring accurate record-keeping. Worked closely with internal teams and external partners to resolve discrepancies and maintain smooth payment processes.",
     },
@@ -86,7 +86,7 @@ export const DATA = {
       title: "Software Engineer",
       logoUrl: "/Fiverr-Logo-jpg.webp",
       start: "January 2023",
-      end: "",
+      end: "Present",
       description:
         "Build responsive, user-friendly websites using HTML, CSS, JS, and Bootstrap. Deliver fast, clean, and client-focused web solutions.",
     },

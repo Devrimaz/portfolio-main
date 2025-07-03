@@ -36,14 +36,14 @@ export function formatDate(date: string) {
   }
 }
 
-interface WorkExperience {
+interface Work {
   company: string;
   href: string;
-  badges: string[];
+  badges: readonly string[];
   location: string;
   title: string;
   logoUrl: string;
   start: string;
-  end?: string;   // <-- Add this line (optional)
   description: string;
+  end?: string;
 }
