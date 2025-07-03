@@ -74,7 +74,7 @@ export const DATA = {
       title: "Settlement Officer",
       logoUrl: "/Port-City-BPO-logo.webp",
       start: "May 2025",
-      //end: "Oct 2022",
+      end: null,
       description:
         "Responsible for handling financial settlements, verifying transactions, and ensuring accurate record-keeping. Worked closely with internal teams and external partners to resolve discrepancies and maintain smooth payment processes.",
     },
