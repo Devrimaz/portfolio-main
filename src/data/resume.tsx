@@ -86,7 +86,7 @@ export const DATA = {
       title: "Software Engineer",
       logoUrl: "/Fiverr-Logo-jpg.webp",
       start: "January 2023",
-      // end: "April 2021",
+      end: null,
       description:
         "Build responsive, user-friendly websites using HTML, CSS, JS, and Bootstrap. Deliver fast, clean, and client-focused web solutions.",
     },
