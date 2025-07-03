@@ -1,14 +1,87 @@
+// src/data/resume.ts
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
-export const DATA = {
+// Define interfaces for type safety
+interface Work {
+  company: string;
+  href: string;
+  badges: readonly string[];
+  location: string;
+  title: string;
+  logoUrl: string;
+  start: string;
+  description: string;
+  end?: string; // Added to fix the TypeScript error
+}
+
+interface Education {
+  school: string;
+  href: string;
+  degree: string;
+  logoUrl: string;
+  start: string;
+  end: string;
+}
+
+interface Project {
+  title: string;
+  href: string;
+  dates: string;
+  active: boolean;
+  description: string;
+  technologies: string[];
+  links: { type: string; href: string; icon: JSX.Element }[];
+  image: string;
+  video?: string;
+}
+
+interface Hackathon {
+  title: string;
+  dates: string;
+  location: string;
+  description: string;
+  image: string;
+  mlh?: string;
+  links: { title: string; icon: JSX.Element; href: string }[];
+}
+
+interface Contact {
+  email: string;
+  tel: string;
+  social: {
+    GitHub: { name: string; url: string; icon: JSX.Element; navbar: boolean };
+    LinkedIn: { name: string; url: string; icon: JSX.Element; navbar: boolean };
+    X: { name: string; url: string; icon: JSX.Element; navbar: boolean };
+    email: { name: string; url: string; icon: JSX.Element; navbar: boolean };
+  };
+}
+
+interface Data {
+  name: string;
+  initials: string;
+  url: string;
+  location: string;
+  locationLink: string;
+  description: string;
+  summary: string;
+  avatarUrl: string;
+  skills: string[];
+  navbar: { href: string; icon: any; label: string }[];
+  contact: Contact;
+  work: Work[];
+  education: Education[];
+  projects: Project[];
+  hackathons: Hackathon[];
+}
+
+export const DATA: Data = {
   name: "Rimaz Ahamed",
   initials: "A.R",
   url: "https://dillion.io",
   location: "Colombo, Sri Lanka",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
-  description:
-    "Web Developer and Tech Enthusiast.",
+  description: "Web Developer and Tech Enthusiast.",
   summary:
     "In 2024, I began focusing full-time on improving my skills as a web developer by building real-world projects and participating in online hackathons. I've worked on a range of applications-from booking systems to tools for developers—while actively learning modern frameworks like React, Next.js, and Bootstrap. I’ve also contributed to freelance projects and shared my work on GitHub and Dev.to. Every project is a step toward mastering full-stack development and building tools that solve real problems.",
   avatarUrl: "/me.jpg",
@@ -38,33 +111,28 @@ export const DATA = {
         name: "GitHub",
         url: "https://github.com/Devrimaz",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/rimazraheem/",
         icon: Icons.linkedin,
-
         navbar: true,
       },
       X: {
         name: "X",
         url: "https://x.com/rimazonX",
         icon: Icons.x,
-
         navbar: true,
       },
       email: {
         name: "Send Email",
         url: "send2rimaz@outlook.com",
         icon: Icons.email,
-
         navbar: false,
       },
     },
   },
-
   work: [
     {
       company: "Port City BPO",
@@ -135,15 +203,14 @@ export const DATA = {
         },
       ],
       image: "",
-      video:
-        "https://pin.it/3VUnjMWpj",
+      video: "https://pin.it/3VUnjMWpj",
     },
   ],
   hackathons: [
     {
       title: "Thinkfest Hackathon",
       dates: "November 23rd - 25th, 2024",
-      location: "Colombo, Sri lanka",
+      location: "Colombo, Sri Lanka",
       description:
         "Developed a mobile application which delivered bedtime stories to children using augmented reality.",
       image:
@@ -154,7 +221,7 @@ export const DATA = {
     {
       title: "Hack The 6ix",
       dates: "August 26th - 27th, 2025",
-      location: "Colombo, Sri lanka",
+      location: "Colombo, Sri Lanka",
       description:
         "Developed an open platform for people shipping items to same place to combine shipping costs and save money.",
       image:
