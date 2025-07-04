@@ -35,3 +35,15 @@ export function formatDate(date: string) {
     return `${fullDate} (${yearsAgo}y ago)`;
   }
 }
+
+interface Work {
+  company: string;
+  href: string;
+  badges: readonly string[];
+  location: string;
+  title: string;
+  logoUrl: string;
+  start: string;
+  description: string;
+  end?: string;
+}
