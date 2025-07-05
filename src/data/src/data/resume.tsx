@@ -78,7 +78,7 @@ interface Data {
 export const DATA: Data = {
   name: "Rimaz Ahamed",
   initials: "A.R",
-  url: "https://dillion.io",
+  url: "https://rimaz.me",
   location: "Colombo, Sri Lanka",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description: "Web Developer and Tech Enthusiast.",

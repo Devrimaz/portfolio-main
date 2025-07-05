@@ -91,7 +91,7 @@ export default function Page() {
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
-                period={`${education.start} - ${education.end}`}
+                period={`${education.start} - ${education.end ?? "Present"}`}
               />
             </BlurFade>
           ))}
@@ -111,7 +111,45 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="projects">
+      <section id="currently-learning">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 11}>
+            <h2 className="text-xl font-bold">Currently Learning</h2>
+          </BlurFade>
+          <div className="flex flex-wrap gap-1">
+            {DATA.currentlyLearning.map((skill, id) => (
+              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 12 + id * 0.05}>
+                <Badge key={skill} variant="outline">{skill}</Badge>
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section id="certificates">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 11}>
+            <h2 className="text-xl font-bold">Certificates</h2>
+          </BlurFade>
+          {DATA.certificates.map((certificate, id) => (
+            <BlurFade
+              key={certificate.name}
+              delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+            >
+              <ResumeCard
+                key={certificate.name}
+                href={certificate.url}
+                logoUrl={certificate.logoUrl}
+                altText={certificate.issuer}
+                title={certificate.name}
+                subtitle={certificate.issuer}
+                period={certificate.date}
+                description={certificate.description}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+      {/* <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -151,7 +189,7 @@ export default function Page() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       <section id="hackathons">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
@@ -161,15 +199,12 @@ export default function Page() {
                   Hackathons
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  I like building things
+                  Learning & Growing
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
+                  I'm passionate about continuous learning and skill development. 
+                  I've completed various courses and certifications to stay updated 
+                  with the latest technologies and best practices in web development.
                 </p>
               </div>
             </div>
@@ -206,16 +241,28 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot me a dm{" "}
+                Interested in working together? Feel free to{" "}
                 <Link
-                  href={DATA.contact.social.X.url}
+                  href={DATA.contact.social.LinkedIn.url}
                   className="text-blue-500 hover:underline"
                 >
-                  with a direct question on twitter
+                  connect with me on LinkedIn
                 </Link>{" "}
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
+                or reach out via email. I&apos;m always open to new opportunities and collaborations.
               </p>
+              <div className="flex justify-center mt-6">
+                <Link
+                  href={DATA.cvUrl}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-lg hover:bg-foreground/90 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Download CV
+                </Link>
+              </div>
             </div>
           </BlurFade>
         </div>
