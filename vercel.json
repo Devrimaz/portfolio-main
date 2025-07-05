@@ -1,5 +1,10 @@
 {
   "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "framework": "nextjs"
+  "installCommand": "npm ci",
+  "framework": "nextjs",
+  "functions": {
+    "app/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  }
 } 
