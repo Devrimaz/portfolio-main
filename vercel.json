@@ -1,10 +1,5 @@
 {
   "buildCommand": "npm run build",
-  "installCommand": "npm ci",
-  "framework": "nextjs",
-  "functions": {
-    "app/**/*.ts": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "installCommand": "npm install --no-package-lock",
+  "framework": "nextjs"
 } 
